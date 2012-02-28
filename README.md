@@ -2,6 +2,12 @@ Redbrew CLI
 ====================================
 A client for Redbrew( http://redbrew.heroku.com/ ).
 
+How to build
+----------------
+
+    $ bundle install --path vendor/bundle
+    $ gem build redbrew.gemspec
+
 Authors
 ----------------
  * @suer
