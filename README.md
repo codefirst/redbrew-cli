@@ -8,6 +8,12 @@ How to build
     $ bundle install --path vendor/bundle
     $ gem build redbrew.gemspec
 
+How to test
+----------------
+
+    $ bundle install --path vendor/bundle
+    $ bundle exec rake spec
+
 Authors
 ----------------
  * @suer
