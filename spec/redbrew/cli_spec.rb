@@ -8,4 +8,9 @@ describe Redbrew::CLI do
     subject { Redbrew::CLI.new }
     its(:start) { should == 'ok' }
   end
+  describe 'version' do
+    it do
+      capture(:stdout) { Redbrew::CLI.new(['version']).run }.should == "Redbrew #{Redbrew::VERSION}\n"
+    end
+  end
 end
