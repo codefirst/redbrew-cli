@@ -3,5 +3,7 @@
 
 $LOAD_PATH << 'lib'
 
+require 'json'
 require 'redbrew/cli'
+require 'redbrew/redbrew_web'
 

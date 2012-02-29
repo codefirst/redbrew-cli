@@ -15,8 +15,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Redbrew::VERSION
 
-  # gem.add_dependency 'json', ['>= 0'] unless defined? JSON
-  #gem.add_dependency 'subcommand', ['>= 0']
+  gem.add_dependency 'json', ['= 1.5.3'] unless defined? JSON
   gem.add_development_dependency 'rspec', ['>= 0']
   gem.add_development_dependency 'rake', ['>= 0']
+  gem.add_development_dependency 'fakeweb', ['>= 1.3.0']
 end

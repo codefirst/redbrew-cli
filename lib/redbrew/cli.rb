@@ -7,10 +7,6 @@ module Redbrew
       @args = args
     end
 
-    def start(args = [])
-      "ok"
-    end
-
     def run
       cmd = @args[0]
       if cmd == 'version'

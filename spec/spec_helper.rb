@@ -2,6 +2,7 @@
 # -*- mode:ruby; coding:utf-8 -*-
 
 require File.dirname(__FILE__) + '/../lib/redbrew.rb'
+require 'fakeweb'
 
 # this method is written by wycats
 def capture(stream)
