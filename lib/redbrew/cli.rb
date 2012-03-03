@@ -37,7 +37,7 @@ module Redbrew
       unless redmine_home.valid?
         warn "This command should be kicked at REDMINE_HOME!"
       else
-        out << Core.new.install(plugin_id)
+        out << (Core.new(redmine_home).install(plugin_id) || '')
       end
       out
     end

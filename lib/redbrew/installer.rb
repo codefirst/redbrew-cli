@@ -10,7 +10,7 @@ module Redbrew
 
     def install
       dsl = @plugin['formula']
-      formula = Redbrew::Formula.new
+      formula = Redbrew::Formula.new(@redmine_home)
       formula.instance_eval { eval dsl }
       formula.run
     end
