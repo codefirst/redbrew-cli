@@ -3,7 +3,10 @@
 
 module Redbrew
   class GitFetcher < Fetcher
-    def initialize(uri)
+    TYPE = 'git'
+
+    def initialize(dest_path, uri)
+      @dest_path = dest_path
       @uri = uri
     end
 
