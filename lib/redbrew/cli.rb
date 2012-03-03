@@ -13,6 +13,8 @@ module Redbrew
         puts 'Redbrew ' + Redbrew::VERSION
       elsif cmd == 'search'
         puts search(@args[1])
+      elsif cmd == 'install'
+        puts install(@args[1])
       end
     end
 
@@ -25,6 +27,17 @@ module Redbrew
         out << ":\t"
         out << plugin['description']
         out << "\n"
+      end
+      out
+    end
+
+    def install(plugin_id)
+      redmine_home = RedmineHome.new
+      out = ''
+      unless redmine_home.valid?
+        warn "This command should be kicked at REDMINE_HOME!"
+      else
+        out << Core.new.install(plugin_id)
       end
       out
     end

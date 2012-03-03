@@ -7,8 +7,8 @@ module Redbrew
       @redmine_home_path = redmine_home_path
     end
 
-    def check?
-      # TODO
+    def valid?
+      File.exist?(@redmine_home_path + '/lib/redmine/version.rb')
     end
 
     def version

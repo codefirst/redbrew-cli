@@ -3,13 +3,14 @@
 
 module Redbrew
   class Installer
-    def initialize(formula, redmine_home)
-      @formula = formula
+    def initialize(plugin, redmine_home)
+      @plugin = plugin
       @redmine_home = redmine_home
     end
 
     def install
       # TODO
+      @plugin['formula']
     end
   end
 end

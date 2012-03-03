@@ -12,7 +12,8 @@ module Redbrew
     end
 
     def install(plugin_id)
-      # TODO
+      plugin = Redbrew::RedbrewWeb.plugin(plugin_id)
+      Installer.new(plugin, @redmine_home).install
     end
   end
 end
