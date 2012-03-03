@@ -32,14 +32,21 @@ module Redbrew
     end
 
     def install(plugin_id)
-      redmine_home = RedmineHome.new
-      out = ''
-      unless redmine_home.valid?
+      home = redmine_home
+      unless home.valid?
         warn "This command should be kicked at REDMINE_HOME!"
       else
-        out << (Core.new(redmine_home).install(plugin_id) || '')
+        out = (core(home).install(plugin_id) || '')
       end
-      out
+      out || ''
+    end
+
+    def core(home)
+      Core.new(home)
+    end
+
+    def redmine_home
+      RedmineHome.new
     end
   end
 end
