@@ -28,6 +28,10 @@ module Redbrew
       "#{major}.#{minor}.#{tiny}"
     end
 
+    def vendor_plugins
+      @redmine_home_path + '/vendor/plugins/'
+    end
+
     private
     def version_file
       @redmine_home_path + '/lib/redmine/version.rb'

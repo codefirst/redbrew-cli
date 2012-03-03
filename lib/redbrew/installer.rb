@@ -9,8 +9,12 @@ module Redbrew
     end
 
     def install
-      # TODO
-      @plugin['formula']
+      type = 'git'
+      uri = @plugin['url']
+      dest_path = @redmine_home.vendor_plugins
+      fetcher = Fetcher.create(type, dest_path, uri)
+      fetcher.fetch
+      # TODO eval formula
     end
   end
 end
