@@ -4,6 +4,12 @@
 $LOAD_PATH << 'lib'
 
 require 'json'
+
 require 'redbrew/cli'
+require 'redbrew/core'
 require 'redbrew/redbrew_web'
+require 'redbrew/redmine_home'
+require 'redbrew/installer'
+require 'redbrew/fetcher/fetcher'
+require 'redbrew/fetcher/git_fetcher'
 
