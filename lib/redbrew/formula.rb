@@ -17,6 +17,11 @@ module Redbrew
       @uri = uri
     end
 
+    def subversion(uri)
+      @type = 'subversion'
+      @uri = uri
+    end
+
     def zip(uri)
       @type = 'zip'
       @uri = uri
