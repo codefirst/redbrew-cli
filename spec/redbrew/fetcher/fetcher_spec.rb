@@ -19,4 +19,9 @@ describe Redbrew::Fetcher do
     subject { Redbrew::Fetcher.create('mercurial', '', '')}
     its(:class) { should == Redbrew::MercurialFetcher.new('', '').class }
   end
+
+  describe 'create zip' do
+    subject { Redbrew::Fetcher.create('zip', '', '')}
+    its(:class) { should == Redbrew::ZipFetcher.new('', '').class }
+  end
 end

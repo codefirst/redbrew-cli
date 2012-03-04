@@ -17,6 +17,11 @@ module Redbrew
       @uri = uri
     end
 
+    def zip(uri)
+      @type = 'zip'
+      @uri = uri
+    end
+
     def redmine_version(version)
       @redmine_version = version
     end

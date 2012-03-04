@@ -19,6 +19,8 @@ module Redbrew
         GitFetcher.new(dest_path, uri)
       elsif type == MercurialFetcher::TYPE
         MercurialFetcher.new(dest_path, uri)
+      elsif type == ZipFetcher::TYPE
+        ZipFetcher.new(dest_path, uri)
       end
     end
   end
