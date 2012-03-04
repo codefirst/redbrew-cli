@@ -17,7 +17,7 @@ module Redbrew
     end
 
     def reboot(type)
-      Redbrew::Rebooter::Rebooter.create(type, @redmine_home.path).reboot
+      Redbrew::Rebooter::Rebooter.create(type, @redmine_home).reboot
     end
   end
 end

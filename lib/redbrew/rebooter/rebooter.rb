@@ -9,9 +9,9 @@ module Redbrew::Rebooter
       raise NotImplemented, "'reboot' must be implemented in subclass."
     end
 
-    def self.create(type, home_path)
+    def self.create(type, redmine_home)
       if type == PassengerRebooter::TYPE
-        PassengerRebooter.new(home_path)
+        PassengerRebooter.new(redmine_home)
       end
     end
   end

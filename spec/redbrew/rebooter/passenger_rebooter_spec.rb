@@ -4,13 +4,13 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Redbrew::Rebooter::PassengerRebooter do
-  REDMINE_HOME = "/path/to/redmine/home"
-  RESTART_FILE = "#{REDMINE_HOME}/tmp/restart.txt"
   describe 'reboot ' do
     context 'success' do
       before do
-        @rebooter = Redbrew::Rebooter::PassengerRebooter.new(REDMINE_HOME)
-        @rebooter.should_receive(:system).with("touch #{RESTART_FILE}") { true }
+        redmine_home = Redbrew::RedmineHome.new("/path/to/redmine/home")
+        restart_file = "#{redmine_home.tmp}/restart.txt"
+        @rebooter = Redbrew::Rebooter::PassengerRebooter.new(redmine_home)
+        @rebooter.should_receive(:system).with("touch #{restart_file}") { true }
       end
       subject { @rebooter }
       its (:reboot) { should be_true }

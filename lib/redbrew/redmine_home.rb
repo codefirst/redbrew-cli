@@ -28,8 +28,8 @@ module Redbrew
       "#{major}.#{minor}.#{tiny}"
     end
 
-    def path
-      @redmine_home_path
+    def tmp
+      "#{@redmine_home_path}/tmp/"
     end
 
     def vendor_plugins

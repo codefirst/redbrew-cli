@@ -5,12 +5,12 @@ module Redbrew::Rebooter
   class PassengerRebooter < Rebooter
     TYPE = 'passenger'
 
-    def initialize(home_path)
-      @home_path = home_path
+    def initialize(redmine_home)
+      @redmine_home = redmine_home
     end
 
     def reboot
-      system("touch #{@home_path}/tmp/restart.txt")
+      system("touch #{@redmine_home.tmp}/restart.txt")
     end
   end
 end
