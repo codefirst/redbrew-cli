@@ -10,7 +10,7 @@ Commands:
 
  install <plugin_id>   - install specified plugin
  search  <keyword>     - search plugins with specified keyword
- reboot  <server_type> - reboot Remdmine
+ reboot  <server_type> - reboot Redmine
                          (supporting server_type is 'passenger')
  version               - show Redbrew's version
  help                  - show this message

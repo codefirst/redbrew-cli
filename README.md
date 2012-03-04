@@ -1,6 +1,15 @@
-Redbrew CLI
+Redbrew - A missing Redmine plugin manager
 ====================================
-A client for Redbrew( http://redbrew.heroku.com/ ).
+A client for [Redbrew](http://redbrew.heroku.com/).
+
+Commands
+----------------
+
+ * install <plugin_id>   - install specified plugin
+ * search  <keyword>     - search plugins with specified keyword
+ * reboot  <server\_type> - reboot Redmine (supporting server_type is 'passenger')
+ * version               - show Redbrew's version
+ * help                  - show help message
 
 How to build
 ----------------
