@@ -6,7 +6,7 @@ $LOAD_PATH << 'lib'
 require 'json'
 
 require 'redbrew/cli'
-require 'redbrew/version'
+require 'redbrew/version' unless Redbrew::VERSION
 require 'redbrew/core'
 require 'redbrew/redbrew_web'
 require 'redbrew/redmine_home'
