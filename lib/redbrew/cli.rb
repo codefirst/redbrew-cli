@@ -3,6 +3,21 @@
 
 module Redbrew
   class CLI
+    HELP = <<HELP
+Redbrew - A missing Redmine plugin manager.
+
+Commands:
+
+ install <plugin_id>   - install specified plugin
+ search  <keyword>     - search plugins with specified keyword
+ reboot  <server_type> - reboot Remdmine
+                         (supporting server_type is 'passenger')
+ version               - show Redbrew's version
+ help                  - show this message
+
+HELP
+
+
     def initialize(args = ARGV)
       @args = args
     end
@@ -17,6 +32,8 @@ module Redbrew
         puts install(@args[1])
       elsif cmd == 'reboot'
         puts reboot(@args[1])
+      elsif cmd == 'help'
+        puts HELP
       end
     end
 

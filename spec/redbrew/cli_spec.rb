@@ -9,6 +9,11 @@ describe Redbrew::CLI do
     it { should == "Redbrew #{Redbrew::VERSION}\n" }
   end
 
+  describe 'help' do
+    subject { capture(:stdout) { Redbrew::CLI.new(['help']).run } }
+    it { should == Redbrew::CLI::HELP }
+  end
+
   describe 'install' do
     before do
       plugin_id = 'redmine_attachments_size'
