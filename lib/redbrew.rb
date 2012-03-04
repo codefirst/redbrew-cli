@@ -14,6 +14,7 @@ require 'redbrew/formula'
 require 'redbrew/installer'
 require 'redbrew/fetcher/fetcher'
 require 'redbrew/fetcher/git_fetcher'
+require 'redbrew/fetcher/mercurial_fetcher'
 require 'redbrew/rebooter/rebooter'
 require 'redbrew/rebooter/passenger_rebooter'
 

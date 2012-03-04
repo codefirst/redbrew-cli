@@ -12,6 +12,11 @@ module Redbrew
       @uri = uri
     end
 
+    def mercurial(uri)
+      @type = 'mercurial'
+      @uri = uri
+    end
+
     def redmine_version(version)
       @redmine_version = version
     end
