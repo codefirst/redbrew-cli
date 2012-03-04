@@ -19,9 +19,10 @@ describe Redbrew::RedmineHome do
     its(:version) { should == '1.2.3' }
   end
 
-  context 'verndor_plugins' do
+  context 'run with current path' do
     subject { Redbrew::RedmineHome.new }
     its(:vendor_plugins) { should == './vendor/plugins/' }
+    its(:path) { should == '.' }
   end
 end
 

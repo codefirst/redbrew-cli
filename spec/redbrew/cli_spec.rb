@@ -27,4 +27,24 @@ describe Redbrew::CLI do
     subject { capture(:stdout) { @cli.run } }
     it { should == "#{@result}\n" }
   end
+
+  describe 'restart' do
+    before do
+      server_type = Redbrew::Rebooter::PassengerRebooter::TYPE
+      @result = 'reboot successful'
+
+      redmine_home = Redbrew::RedmineHome.new
+      redmine_home.stub(:valid?) { true }
+
+      core = Redbrew::Core.new('/REDMINE/HOME')
+      core.should_receive(:reboot).with(server_type) { @result }
+
+      @cli = Redbrew::CLI.new(['reboot', server_type])
+      @cli.stub(:core) { core }
+      @cli.stub(:redmine_home) { redmine_home }
+    end
+
+    subject { capture(:stdout) { @cli.run } }
+    it { should == "#{@result}\n" }
+  end
 end

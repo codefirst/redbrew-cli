@@ -15,5 +15,9 @@ module Redbrew
       plugin = Redbrew::RedbrewWeb.plugin(plugin_id)
       Installer.new(plugin, @redmine_home).install
     end
+
+    def reboot(type)
+      Redbrew::Rebooter::Rebooter.create(type, @redmine_home.path).reboot
+    end
   end
 end
