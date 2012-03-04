@@ -18,8 +18,7 @@ module Redbrew
     end
 
     def extract_repo_name
-      repo_name = @uri[@uri.rindex('/') + 1, @uri.size - 1]
-      repo_name
+      @uri[@uri.rindex('/') + 1, @uri.size - 1]
     end
   end
 end
