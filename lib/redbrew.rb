@@ -4,6 +4,8 @@
 $LOAD_PATH << 'lib'
 
 require 'json'
+require 'tmpdir'
+require 'fileutils'
 
 require 'redbrew/cli'
 require 'redbrew/version'

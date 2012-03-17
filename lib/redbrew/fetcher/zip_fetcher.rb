@@ -15,10 +15,12 @@ module Redbrew
     def fetch
       file_name = extract_file_name
       tmpdir = tmp_dir
-      cmd = "#{WGET_BIN} #{@uri} -O #{tmp_dir}/#{file_name}"
+      cmd = "#{WGET_BIN} #{@uri} -O #{tmpdir}/#{file_name}"
       system(cmd)
-      cmd = "#{UNZIP_BIN} #{tmp_dir}/#{file_name} #{@dest_path}/#{File.basename(file_name, '.zip')}"
+      extract_dir = "#{tmpdir}/#{File.basename(file_name, '.zip')}#{Time.now.strftime('%Y%m%d%H%M%S')}"
+      cmd = "#{UNZIP_BIN} #{tmpdir}/#{file_name} -d #{extract_dir}"
       system(cmd)
+      FileUtils.move(plugin_root_dir(extract_dir), "#{@dest_path}/#{File.basename(file_name, '.zip')}")
     end
 
     def tmp_dir
@@ -27,6 +29,11 @@ module Redbrew
 
     def extract_file_name
       @uri[@uri.rindex('/') + 1, @uri.size - 1]
+    end
+
+    def plugin_root_dir(extract_dir)
+      sub = Dir.glob("#{extract_dir}/*")
+      sub.size == 1 ? sub.first : extract_dir
     end
   end
 end
