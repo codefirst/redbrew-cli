@@ -2,7 +2,7 @@
 require File.expand_path('../lib/redbrew/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["mallowlabs"]
+  gem.authors       = ["mallowlabs", "suer"]
   gem.email         = ["mallowlabs@gmail.com"]
   gem.description   = %q{A client application for Redbrew.}
   gem.summary       = %q{A client application for Redbrew.}
