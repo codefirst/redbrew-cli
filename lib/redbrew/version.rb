@@ -2,6 +2,6 @@
 # -*- mode:ruby; coding:utf-8 -*-
 
 module Redbrew
-  VERSION = '0.0.1'
+  VERSION = '0.0.1'  unless defined?(::Redbrew::VERSION)
 end
 
