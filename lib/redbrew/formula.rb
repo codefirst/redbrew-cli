@@ -37,7 +37,7 @@ module Redbrew
 
     def run
       # TODO check redmine_version
-      fetcher = Fetcher.create(@type, @redmine_home.vendor_plugins, @uri)
+      fetcher = Fetcher.create(@type, @redmine_home.plugins_directory, @uri)
       fetcher.fetch if fetcher
       @proc.call if @proc
     end

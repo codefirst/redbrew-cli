@@ -21,7 +21,7 @@ describe Redbrew::RedmineHome do
 
   context 'run with current path' do
     subject { Redbrew::RedmineHome.new }
-    its(:vendor_plugins) { should == './vendor/plugins/' }
+    its(:plugins_directory) { should == './plugins/' }
     its(:tmp) { should == './tmp/' }
   end
 end

@@ -32,8 +32,8 @@ module Redbrew
       "#{@redmine_home_path}/tmp/"
     end
 
-    def vendor_plugins
-      @redmine_home_path + '/vendor/plugins/'
+    def plugins_directory
+      @redmine_home_path + '/plugins/'
     end
 
     private
