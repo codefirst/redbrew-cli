@@ -27,8 +27,8 @@ module Redbrew
       @uri = uri
     end
 
-    def redmine_version(version)
-      @redmine_version = version
+    def required(ver)
+      @required = ver
     end
 
     def exec(&p)
@@ -36,7 +36,12 @@ module Redbrew
     end
 
     def run
-      # TODO check redmine_version
+      if @required
+        ver = Gem::Version.create(@redmine_home.version)
+        unless Gem::Requirement.create(@required).satisfied_by?(ver)
+          raise "This plugin cannot be installed to Redmine #{@redmine_home.version}. Required #{@required}"
+        end
+      end
       fetcher = Fetcher.create(@type, @redmine_home.plugins_directory, @uri)
       fetcher.fetch if fetcher
       @proc.call if @proc
